@@ -1,0 +1,3 @@
+### Loops 
+Looping in bash is a little different from other languages... 
+
