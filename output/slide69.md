@@ -1,9 +1,8 @@
 
-#### Limiations
-Protections and other footnotes
+## Some Common Licenses 
 
-* **Liability**
-	* Whether the creator can be held liable for damages
-* **Trademark Use**
-	* Usage related to trademarking. 
+* [MIT License](http://choosealicense.com/licenses/mit/)
+* [GNU GPL License](http://choosealicense.com/licenses/gpl-3.0/)
+* [GNU LGPL License](http://choosealicense.com/licenses/lgpl-3.0/)
+* [Apache License](http://choosealicense.com/licenses/apache-2.0/)
 

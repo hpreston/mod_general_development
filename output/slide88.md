@@ -1,8 +1,6 @@
-Whenever possible, any code that is going to be deployed as part of a CI/CD pipeline should include test cases. Ensuring
-that a project has a good testing suite provides the following benefits:
+The python community provides guidance on coding convention and style through [PEP](https://www.python.org/dev/peps/pep-0008/). Linters are a good way of verifying that the code you have written conforms to PEP.  A simple example of a linter for python is [flake8](http://flake8.pycqa.org/en/latest/) which is available via pypi
 
-* Requires less background knowledge for other developers to contribute
-* Reduces failed deployments
-* Makes code refactoring easier
-* Helps identify where additional validation logic is required
+```
+pip install flake8 
+```
 

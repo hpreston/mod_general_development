@@ -1,5 +1,2 @@
-
-## Experiments 
-
-We'll create a new directory and walk through some basic Vagrant exercises.  
+## Why do we care 
 

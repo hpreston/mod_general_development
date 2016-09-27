@@ -1,5 +1,6 @@
-#### Is OpenSource inherintly better, more stable, more secure?  
+## Considerations for Choosing a License
 
-Nope... remember [Heartbleed](https://en.wikipedia.org/wiki/Heartbleed)
-
+* Permissions
+* Conditions
+* Limitations
 

@@ -1,10 +1,8 @@
+Whenever possible, any code that is going to be deployed as part of a CI/CD pipeline should include test cases. Ensuring
+that a project has a good testing suite provides the following benefits:
 
-### Links
-
-* [https://www.fullstackpython.com/application-dependencies.html](https://www.fullstackpython.com/application-dependencies.html)
-* [https://devcenter.heroku.com/articles/python-pip](https://devcenter.heroku.com/articles/python-pip)
-* [https://tech.knewton.com/blog/2015/09/best-practices-for-python-dependency-management/](https://tech.knewton.com/blog/2015/09/best-practices-for-python-dependency-management/)
-* [http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
-* [https://virtualenvwrapper.readthedocs.io/en/latest/](https://virtualenvwrapper.readthedocs.io/en/latest/)
-
+* Requires less background knowledge for other developers to contribute
+* Reduces failed deployments
+* Makes code refactoring easier
+* Helps identify where additional validation logic is required
 

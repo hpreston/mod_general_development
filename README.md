@@ -921,15 +921,15 @@ This exercise will combine skills from the full Linux tools content.
 
 # Vagrant 
 
-Vagrant is a tool for developers to make preparing, managing, and replicating a dedicated development environment as easy and painless as possible.  It is **NOT** intended to manage or deploy production environments.  It **IS** intended to make a development environment as close to a production environment as practical and possible.  
+![](images/vagrant1.png)
 
 [item]: # (/slide)
 
+Vagrant is a tool for developers to make preparing, managing, and replicating a dedicated development environment as easy and painless as possible.  It is **NOT** intended to manage or deploy production environments.  It **IS** intended to make a development environment as close to a production environment as practical and possible.  
+
 [item]: # (slide)
 
-### Before Vagrant
-
-Before Vagrant... developers used one of the following methods when developing softare
+### Developing Before Vagrant
 
 * Locally on their physical machine 
 * Request Virtual Machines for development from IT or other source 
@@ -940,8 +940,10 @@ Before Vagrant... developers used one of the following methods when developing s
 
 [item]: # (/slide)
 
+Before Vagrant... developers used one of the above methods when developing software
+
 [item]: # (slide)
-All of these options presented many problems
+### Challenges with legacy development approaches 
 
 * Time delays in getting new development environments
 * Managing their own dev platforms 
@@ -951,19 +953,19 @@ All of these options presented many problems
 
 [item]: # (/slide)
 
+All of these options presented many problems
+
 [item]: # (slide)
 
-### Supported Development Environment
+## Supported Environments
 
-Vagrant is often used along with Virtualbox to provide a local dev environment on the developers own computer, but it can also leverage other providers.  
-
-Out of the box support for 
+### Out of the box support
 
 * Virtualbox 
 * Docker
 * Hyper-V
 
-Plugins available for 
+### Plugins available 
 
 * VMware
 * AWS
@@ -971,30 +973,39 @@ Plugins available for
 
 [item]: # (/slide)
 
-[item]: # (slide)
-### Sidebar on Docker
+Vagrant is often used along with Virtualbox to provide a local dev environment on the developers own computer, but it can also leverage other providers.  
 
-Vagrant is often thought of, and started out, as a VM based tool.  With the push in development towards containers, and Docker specifically, it is now often used for container based development as well.  There are two ways to work with Docker containers and Vagrant
+## Sidebar on Docker
+
+[item]: # (slide)
+
+![](images/docker-vagrant.png)
+
+* Option 1: Direct Docker Support
+* Option 2: Docker inside a VM
 
 [item]: # (/slide)
 
-[item]: # (slide)
+Vagrant is often thought of, and started out, as a VM based tool.  With the push in development towards containers, and Docker specifically, it is now often used for container based development as well.  There are two ways to work with Docker containers and Vagrant
 
 #### Option 1: Direct Docker Support
 
 If your underlying computer can support running containers natively, Vagrant can directly deploy containers to the Docker daemon on your workstation (or a remote host).  
 
-[item]: # (/slide)
-
-[item]: # (slide)
 #### Option 2: Docker inside a VM
 
 For a long time, you could only run Docker natively on a Linux OS.  To run Docker on Mac or Windows you needed to run a Linux based VM, and then run Docker inside the VM.  Technologies like Docker Toolbox, Docker Machine, and boot2docker all worked to make this easier.  Vagrant can use this model to also support Docker development by first creating a host VM, installing Docker into the VM, and then deploying containers on the VM.  
 
+[item]: # (slide)
+## Key Concepts and Terms
+
+* `vagrant up`
+* `Vagrantfile`
+* A ***box***
+
 [item]: # (/slide)
 
-[item]: # (slide)
-### Key Concepts and Terms with Vagrant 
+### Details 
 
 * `vagrant up`
 	* The simple command needed to bring up the full development environment
@@ -1006,16 +1017,13 @@ For a long time, you could only run Docker natively on a Linux OS.  To run Docke
 	* You can build your own boxes, but there is a very large assortment of available ones maintained by the community 
 	* Each **box** is for a particular provider, but most underlying OS's or platforms have boxes available for all common providers.  
 
-
-[item]: # (/slide)
-
 [item]: # (slide)
 
-## Experiments 
-
-We'll create a new directory and walk through some basic Vagrant exercises.  
+# Experiments 
 
 [item]: # (/slide)
+
+We'll create a new directory and walk through some basic Vagrant exercises.  
 
 * Create the new directory, and initialize vagrant for the project 
 
@@ -1268,52 +1276,57 @@ We'll create a new directory and walk through some basic Vagrant exercises.
 
 [item]: # (slide)
 
-## Links 
+# Links 
 
 * [https://www.vagrantup.com](https://www.vagrantup.com)
 * [https://www.vagrantup.com/docs/getting-started/](https://www.vagrantup.com/docs/getting-started/)
 * [https://www.upguard.com/articles/docker-vs-vagrant](https://www.upguard.com/articles/docker-vs-vagrant)
 * [https://www.quora.com/Why-should-I-use-Vagrant-instead-of-creating-multiple-VMs-in-VirtualBox-or-VMWare-Workstation](https://www.quora.com/Why-should-I-use-Vagrant-instead-of-creating-multiple-VMs-in-VirtualBox-or-VMWare-Workstation)
 
-
 [item]: # (/slide)
 
 [item]: # (slide)
 ## Why do we care 
 
+[item]: # (/slide)
+
 Development in general, but Cloud Native development for sure, are all about using techinques and tools to make their world easier.  Concepts like _Infrastructure as Code_ started with them, and tools like this.  Understanding how a modern developer works, learning to use their tools, will make having a dialog with them much easier.  
 
 It will also help you as you talk with Infrastructure teams to be able to educate them on these types of concepts.  
-
-[item]: # (/slide)
 
 [item]: # (slide)
 
 ## Go do it Exercises 
 
-One of the nicest things about Vagrant, is the ability to embed the development environment into the code repositories.  You will find many code repo's that include a Vagrantfile to make development easier.  
-
 * Take a look at the [hpreston/myhero_data](https://github.com/hpreston/myhero_data) repo and read through the README section on development environments.  
 * Clone the repo locally and "vagrant up" the environment and try to interact with the microservice API.  
 * Review the Vagrantfile and Vagrantfile.host and see if you can follow how they work together to provide a Docker environment with Vagrant
 
-
 [item]: # (/slide)
 
+One of the nicest things about Vagrant, is the ability to embed the development environment into the code repositories.  You will find many code repo's that include a Vagrantfile to make development easier.  
+
 [item]: # (slide)
-# OpenSource Licenses 
+# OpenSource 
+
+![](images/open-source-logo.png)
 
 [item]: # (/slide)
 
 [item]: # (slide)
 ## What is OpenSource 
 
-"Open source software is software with source code that anyone can inspect, modify, and enhance." [OpenSource.com](https://opensource.com/resources/what-open-source) 
+>"Open source software is software with source code that anyone can inspect, modify, and enhance." 
+>~ [OpenSource.com](https://opensource.com/resources/what-open-source) 
 
 [item]: # (/slide)
 
 [item]: # (slide)
-#### Is OpenSource "Free"?
+##Is OpenSource "Free"?
+
+![](images/free.jpg)
+
+[item]: # (/slide)
 
 No... sorta... not really... 
 
@@ -1321,12 +1334,8 @@ OpenSource licenses often require the software be free to distribute, but there 
 
 Also, developing OpenSource software is no simpler than developing proprietary software.  Some projects are done as side projects, but many are done by paid programmers.  
 
-[item]: # (/slide)
-
 [item]: # (slide)
-#### Why do people like OpenSource? 
-
-Lots of reasons... many cite
+## Why do people like OpenSource? 
 
 * Control
 * Training
@@ -1335,29 +1344,41 @@ Lots of reasons... many cite
 
 [item]: # (/slide)
 
-[item]: # (slide)
-#### Is OpenSource inherintly better, more stable, more secure?  
+Lots of reasons... many cite
 
-Nope... remember [Heartbleed](https://en.wikipedia.org/wiki/Heartbleed)
+[item]: # (slide)
+## Is OpenSource inherintly better, more stable, more secure?  
 
 
 [item]: # (/slide)
 
 [item]: # (slide)
-### Considerations for Choosing One
+
+![](images/Heartbleed.png)
+
+Nope... remember [Heartbleed](https://en.wikipedia.org/wiki/Heartbleed)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+## Considerations for Choosing a License
+
+* Permissions
+* Conditions
+* Limitations
+
+[item]: # (/slide)
 
 Any software product has a "license" that is attached.  We see and agree to these licenses all the time, but we've become so accustomed to "Click to accept" that we don't even realize it.  
 
 With OpenSource Projects, you could write your own license that said whatever you wanted, but that's kinda boring.  So there are several available options that are often used.  
 
-Licenses will typically address the following characteristics. And their treatment of each often determines what license makes sense for a project.  
-
-[item]: # (/slide)
+Licenses will typically address the above characteristics. And their treatment of each often determines what license makes sense for a project.  
 
 [item]: # (slide)
 
-#### Permissions
-What are you allowed to do... 
+### Permissions
+***What are you allowed to do...***
 
 * **Use - Commercial vs Private**
 	* Can you use the software to make money
@@ -1371,8 +1392,8 @@ What are you allowed to do...
 [item]: # (/slide)
 
 [item]: # (slide)
-#### Conditions
-What must you do... 
+### Conditions
+***What must you do...*** 
 
 * **OpenSource** 
 	* Actually provide the source code 
@@ -1387,8 +1408,8 @@ What must you do...
 
 [item]: # (slide)
 
-#### Limiations
-Protections and other footnotes
+### Limiations
+***Protections and other footnotes***
 
 * **Liability**
 	* Whether the creator can be held liable for damages
@@ -1401,44 +1422,35 @@ Protections and other footnotes
 
 ## Some Common Licenses 
 
-[item]: # (/slide)
+* [MIT License](http://choosealicense.com/licenses/mit/)
+* [GNU GPL License](http://choosealicense.com/licenses/gpl-3.0/)
+* [GNU LGPL License](http://choosealicense.com/licenses/lgpl-3.0/)
+* [Apache License](http://choosealicense.com/licenses/apache-2.0/)
 
-[item]: # (slide)
+[item]: # (/slide)
 
 ### MIT license
 A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 [MIT License](http://choosealicense.com/licenses/mit/)
 
-[item]: # (/slide)
-
-[item]: # (slide)
 ### GNU General Public License (GPL)
 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
 
 [GNU GPL License](http://choosealicense.com/licenses/gpl-3.0/)
 
-[item]: # (/slide)
-
-[item]: # (slide)
 ### GNU Library or "Lesser" General Public License (LGPL)
 Permissions of this copyleft license are conditioned on making available complete source code of licensed works and modifications under the same license or the GNU GPLv3. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. However, a larger work using the licensed work through interfaces provided by the licensed work may be distributed under different terms and without source code for the larger work.
 
 [GNU LGPL License](http://choosealicense.com/licenses/lgpl-3.0/)
 
-[item]: # (/slide)
-
-[item]: # (slide)
 ### Apache License 2.0
 A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 [Apache License](http://choosealicense.com/licenses/apache-2.0/)
 
-
-[item]: # (/slide)
-
 [item]: # (slide)
-## Links (and sources)
+# Links (and sources)
 
 * [https://opensource.com/resources/what-open-source](https://opensource.com/resources/what-open-source)
 * [https://en.m.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses](https://en.m.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses)
@@ -1449,13 +1461,14 @@ A permissive license whose main conditions require preservation of copyright and
 [item]: # (/slide)
 
 [item]: # (slide)
-## Why Do We Care? 
+# Why Do We Care? 
+
+[item]: # (/slide)
 
 OpenSource has always been popular, but its popularity is raising at a very fast level.  We are seeing large enterprises, across verticles, embracing OpenSource Software like never before.  And this is in some very critical areas where traditionally they would have selected a more traditional commercial vendor.  Even commercial software vendors, traditionally very anti-OpenSource, are starting to embrace OpenSource in a big way.  This could be as a user, contributor, or initiator of projects.  
 
 Not all OpenSource projects and licenses are the same though, and as you jump into this world as an individual, you need to be able to differentiate between the different licenses that you'll run into so you can make apprporiate decisions about which projects to use and contribute to.  Also, deciding on an appropriate license for your own projects is an important decision that can have significant consequenses.  
 
-[item]: # (/slide)
 
 [item]: # (slide)
 ## Go Do It Exercises 
@@ -1475,52 +1488,49 @@ Look at some popular OpenSource projects and find the license that they are publ
 [item]: # (slide)
 # Python Skills 
 
+![](images/python-logo.png)
+
+[item]: # (/slide)
+
+##The Zen of Python
+
+[item]: # (slide)
+
+![](images/zen-python.jpg)
+
 [item]: # (/slide)
 
 [item]: # (slide)
-##The Zen of Python
 
-```
-Beautiful is better than ugly. 
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren't special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you're Dutch.
-Now is better than never.
-Although never is often better than right now.
-If the implementation is hard to explain, it's a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those!
+## Managing Python Dependencies
 
-—Tim Peters
-```
+![](images/python-dependencies.jpg)
 
 [item]: # (/slide)
 
 [item]: # (slide)
 ## pip
 
+```
+pip install requests
+```
+
+[item]: # (/slide)
+
 Python uses pip to install and manage packages and optional modules.  Likely you've used it already, but here we're going to talk about how to use it and capture details for packaging into your application.  
 
 The common practice with python applciations is to include a file called `requirements.txt` that lists out all the packages needed for an application.  
 
-[item]: # (/slide)
-
 [item]: # (slide)
 ## virtualenv
 
-Virtual Environments are a capability of Python to create isolated working environments on a single machine with completely different configuraitons and dependencies deployed.  Nearly everyone in IT has horror stories of dependency conflicts between software installed on the same computer.  
+```
+virtualenv appdev 		
+```
 
 [item]: # (/slide)
+
+Virtual Environments are a capability of Python to create isolated working environments on a single machine with completely different configuraitons and dependencies deployed.  Nearly everyone in IT has horror stories of dependency conflicts between software installed on the same computer.  
 
 One example that came up quite a bit in the past was software that leveraged a component of Microsoft Office (ie Word or Excel) as part of its functionality.  Most of these cases required a very specific, and often outdated, version of Office to function.  This would mean that users were unable to update Office on their computers, because it would break some other software.  To solve the, several enterprises leveraged Citrix to isolate applacation environments from one another.  
 
@@ -1530,60 +1540,22 @@ A secondary benefit, but very important as well, is the ability to limit the mod
 
 
 [item]: # (slide)
-### Experiments
+# Experiments
 
 [item]: # (/slide)
 
-**PIP EXPERIMENTS** 
-*In these experiements, you're output will likley differ greatly as you're querying your local Python installation.* 
-
-* Let's take a look at the currently installed packages
-
-	```
-	pip freeze
+* Install pip on your workstation 
+	* One method... Download [get-pip.py](https://bootstrap.pypa.io/get-pip.py)
 	
-	You are using pip version 7.1.0, however version 8.1.2 is available.
-	You should consider upgrading via the 'pip install --upgrade pip' command.
-	argumentparser==1.2.1
-	Flask==0.10.1
-	itsdangerous==0.24
-	Jinja2==2.8
-	MarkupSafe==0.23
-	Werkzeug==0.11.5
-	wheel==0.24.0
-	
-	```
-	
-	* `pip freeze` queries the active python interpreter for all installed modules and their versions.  It then outputs it in the displayed format that can be fed into a `pip install` command to ensure proper dependencies are met.
-* Use `pip freeze` to create a requirements.txt file for a project 
+		```
+		python get-pip.py
+		```
+		
+	* There are others... 
+		* easy_install
+		* brew
+		* yum, apt, etc 
 
-	```
-	pip freeze > requirements.txt 
-	
-	cat requirements.txt 
-	
-	argumentparser==1.2.1
-	Flask==0.10.1
-	itsdangerous==0.24
-	Jinja2==2.8
-	MarkupSafe==0.23
-	Werkzeug==0.11.5
-	wheel==0.24.0
-	
-	```
-
-* You would include the `requirements.txt` file in your code repo to document dependencies.  
-* Then in setup instructions, Dockerfiles, Vagrantfiles, or other areas where you are installing your software, you'd use the file like this to install the proper dependencies into the working environment for your application.  
-
-	```
-	pip install -r requirements.txt 
-	
-	```
-
-	* In this case, we just read the current state to create the file, so you'll likely get notes back that `Requirement already satisfied`
-
-**VENV EXPERIMENTS**
-### Experiments
 
 * Install virtualenv on your workstation using pip
 
@@ -1630,7 +1602,6 @@ A secondary benefit, but very important as well, is the ability to limit the mod
 	pip freeze 
 	
 	# Nothing should be returned
-	# Compare this to what we saw in the pip exercises 
 	
 	```
 
@@ -1694,7 +1665,7 @@ A secondary benefit, but very important as well, is the ability to limit the mod
 	
 [item]: # (slide)
 
-### Links
+# Links
 
 * [https://www.fullstackpython.com/application-dependencies.html](https://www.fullstackpython.com/application-dependencies.html)
 * [https://devcenter.heroku.com/articles/python-pip](https://devcenter.heroku.com/articles/python-pip)
@@ -1702,40 +1673,29 @@ A secondary benefit, but very important as well, is the ability to limit the mod
 * [http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 * [https://virtualenvwrapper.readthedocs.io/en/latest/](https://virtualenvwrapper.readthedocs.io/en/latest/)
 
-
 [item]: # (/slide)
 
 [item]: # (slide)
-### Why do we care
+# Why do we care
+
+[item]: # (/slide)
+
 
 It is up to the developer today to consider dependencies when building applciations, and if you follow the 12 Factor App principals, declaration and islotation are critical.  As we're setting out to build application demos, understanding how to address dependencies is critical to providing useful applicaitons, and not just toy-code.  
 
 Every language and framework for development has dependencies.  One part of learning a language you plan to use for application or demo development needs to be a consideration on how they are handled and documented.  You'll want to find the equivelant of *pip* in whichever langague you are using.  
 
-
-[item]: # (/slide)
-
-[item]: # (slide)
-### Why do we care
-
 In development today, it is not only good practice, but it's expected to provide software with dependency isolation.  If you're building a python application that will be downloaded and ran on a host, virtualenv for python is a standard way to do this.  
 
-However, more and more applciations are being packaged in containers (typically Docker containers) which provide a level of isolation even higher than a simple Virtual Environment.  You could create a Virtual Environment within a container, but if you are practicing good container strategy, that is likely not needed as part of final delivery.  
+However, more and more applications are being packaged in containers (typically Docker containers) which provide a level of isolation even higher than a simple Virtual Environment.  You could create a Virtual Environment within a container, but if you are practicing good container strategy, that is likely not needed as part of final delivery.  
 
 Though, in the development phase, you may choose to use virtualenv to develop within to avoid the extra steps of rebuilding a new container for every update and test.
 
-[item]: # (/slide)
-
 [item]: # (slide)
-### Go do it Exercises 
+# Go do it Exercise
 
-This exercise will combine the pip and virtualenv skills together.  As well as give you something new to extend the virtualenv skills to research... 
-
-* Take a look at this sample django application on GitHub [kirpit/django-sample-app](https://github.com/kirpit/django-sample-app)
-* Review the README, this lab is about setting up this application within a virtual environment on your workstation 
-* Step 1 in the installation references a tool called **virtualenvwrapper**.  Check the link above that describes its value and install it with pip 
-* Run through the installation of the sample application and start the web server
-
+* Create an empty directory called pip_venv_exercise 
+* Using pip and virtualenv, create a new Python program that leverages the Python module *requests* to get the current weather details for Zip Code 13057 and print out the key details in a user friendly way.  
 
 [item]: # (/slide)
 

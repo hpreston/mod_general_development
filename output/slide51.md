@@ -1,4 +1,4 @@
-All of these options presented many problems
+### Challenges with legacy development approaches 
 
 * Time delays in getting new development environments
 * Managing their own dev platforms 

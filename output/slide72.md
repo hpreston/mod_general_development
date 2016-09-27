@@ -1,5 +1,12 @@
-### GNU General Public License (GPL)
-Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
+## Go Do It Exercises 
 
-[GNU GPL License](http://choosealicense.com/licenses/gpl-3.0/)
+Look at some popular OpenSource projects and find the license that they are published under.  Here are some ideas, but feel free to look elsewhere.  
+
+* Ubuntu
+* Apache
+* HA-Proxy
+* Cisco Mantl
+* Terraform
+* Vagrant
+* Cisco Contiv
 

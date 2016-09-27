@@ -1,9 +1,5 @@
-#### Why do people like OpenSource? 
 
-Lots of reasons... many cite
+![](images/Heartbleed.png)
 
-* Control
-* Training
-* Security
-* Stability 
+Nope... remember [Heartbleed](https://en.wikipedia.org/wiki/Heartbleed)
 

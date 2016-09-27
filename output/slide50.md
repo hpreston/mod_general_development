@@ -1,7 +1,5 @@
 
-### Before Vagrant
-
-Before Vagrant... developers used one of the following methods when developing softare
+### Developing Before Vagrant
 
 * Locally on their physical machine 
 * Request Virtual Machines for development from IT or other source 
