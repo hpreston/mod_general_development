@@ -7,7 +7,7 @@
 [item]: # (slide)
 # Main Topics
 
-* [12 Factor Concepts](#12-factor-concepts)
+* [12 Factor Application](#12-factor-application)
 * [Basic Linux Tools](#basic-linux-tools)
 * [Markdown](#markdown)
 * [Vagrant](#vagrant)
@@ -19,22 +19,25 @@
 [item]: # (/slide)
 
 [item]: # (slide)
-# 12 Factor Concepts
+# The 12 Factor Application
+
+![](images/12factor-image.jpg)
 [item]: # (/slide)
 
 [item]: # (slide)
 ## What is a "12 Factor" App and where did it come from
 
-The 12 Factor Application is a methodology proposed in the early 2010s by core members of the Heroku team.  It is a well circulated and read proposal that focuses on "Cloud Native" application design concepts, however it is not perfect or univerally accepted.  Most will agree that it provides an ideal to strive towards, and a _violation_ of a factor should be done consciously and with reason.  
-
-It is not the only _manifesto_ on Cloud Native development, but it is worth having exposure and understanding of.  
-
 Full details at [12Factor.net](http://12factor.net) 
 
 [item]: # (/slide)
 
+The 12 Factor Application is a methodology proposed in the early 2010s by core members of the Heroku team.  It is a well circulated and read proposal that focuses on "Cloud Native" application design concepts, however it is not perfect or univerally accepted.  Most will agree that it provides an ideal to strive towards, and a _violation_ of a factor should be done consciously and with reason.  
+
+It is not the only _manifesto_ on Cloud Native development, but it is worth having exposure and understanding of.  
+
+
 [item]: # (slide)
-## The Factors 
+# The Factors 
 
 ### I. [Codebase](http://12factor.net/codebase)
 One codebase tracked in revision control, many deploys
@@ -83,30 +86,43 @@ Run admin/management tasks as one-off processes
 [item]: # (slide)
 ## A Stateless Aspiration
 
+![](images/no-baggage.jpg)
+
+[item]: # (/slide)
+
 The 12 Factor Application describes a goal of a **stateless application**.  The refers to the goal that applications (and their components) should be able to come and go without any overall impact to the user or data.  This is core to the ablity to be fully "cloud native" and drive towards fully automated operations and portablity.  
 
 This is a great target goal, and for many applications, or microservices within an application, it is useful and practical.  But as an overall strategy it has some significant problems that are important to be aware of.  
 
-[item]: # (/slide)
+### Where's the data?
 
 [item]: # (slide)
-### Where's the data?
+
+![](images/pickard-where-data.jpg)
+
+[item]: # (/slide)
 
 Nearly every application of significance has a need to gather, manipulate, store, and report on data.  At it's core, the 12 Factor principals do not accomidate for how to deal with data. 
 
-[item]: # (/slide)
-
 [item]: # (slide)
-## Why do we Care? 
+# Why do we Care? 
+
+[item]: # (/slide)
 
 Software development is like any other area of IT.  There are basic capabilities and technologies, then there are strategies for using them.  When we want to be relevant to network engineers, we study strategies and design with "3 Tier Network Architectures" and more recently "Spine-Leaf" in mind.  When we want to be relevant to software developers, we need to understand the common practices and methods to engage in discussions.  
 
-[item]: # (/slide)
 
 [item]: # (slide)
 ## A sidebar on Secrets
 
+![](images/secret1.png)
+
+[item]: # (/slide)
+
 In development a "secret" can loosely be defined as anything you wouldn't want everyone else in the world to know.  This includes the obvious things like: 
+
+[item]: # (slide)
+### Obvious Secrets 
 
 * Passwords 
 * Authentication Tokens
@@ -116,8 +132,10 @@ In development a "secret" can loosely be defined as anything you wouldn't want e
 
 [item]: # (/slide)
 
-[item]: # (slide)
 But it can also include things that aren't as directly damaging if they are lost such as: 
+
+[item]: # (slide)
+### Also Secrets
 
 * Application and Server Names 
 * API Endpoints and addresses 
@@ -128,12 +146,12 @@ But it can also include things that aren't as directly damaging if they are lost
 
 [item]: # (/slide)
 
-[item]: # (slide)
 **Factor III: Config** talks about NOT including environment details in your code, but rather in the environment.  In many cases the "environment details" also qualify as **secrets** and you need to take care about how you are storing and transporting them throughout application development and deployment process.  It is very easy to commit secrets into a codebase (ie GitHub) and mistakeningly make your usernames and passwords publicly available on GitHub.
 
-[item]: # (/slide)
 
 [item]: # (slide)
+### Cautionary Tail... 
+
 * Example of what can happen: [$6,000 AWS Bill Overnight](https://wptavern.com/ryan-hellyers-aws-nightmare-leaked-access-keys-result-in-a-6000-bill-overnight)
 * Handy reference on what to do: [Remove sensitve data from GitHub](https://help.github.com/articles/remove-sensitive-data/)
 
@@ -165,42 +183,30 @@ But it can also include things that aren't as directly damaging if they are lost
 
 > See, you not only have to be a good coder to create a system like Linux, you have to be a sneaky bastard too. -Linus Torvalds
 
+--- 
+
 > Linux has never been about quality. There are so many parts of the system that are just these cheap little hacks, and it happens to run. -Theo de Raadt
 
 [item]: # (/slide)
 
 [item]: # (slide)
+## Don't forget the "Ops" in DevOps...
+![](images/devops-infinity.png)
+
+[item]: # (/slide)
+
 Some of the most difficult parts of developing are often less about coding, and more about operational tasks.  But since the big theme in development these days is **Dev"Ops"** we can't get away from those tasks.  
 
 Scripting has long been the swiss army knife for operations, and it continues to be valuable today.  There are several common Linux utilities that having a basic fundamental knowledge of will help you greatly as you work to develop and package your applications for others to use.  
 
-[item]: # (/slide)
-
 [item]: # (slide)
 ## Hands On Prep
 
-* Weather.com
-* CiscoSpark.com
-
-[item]: # (/slide)
-
-[item]: # (slide)
-The following examples leverage the Weather.com API.  Developer access to the API is free and accounts can be created at [wunderground](https://www.wunderground.com/weather/api/).  You will need an API key to follow along with the examples.  
-
-Once you have your API key, run this command at your command line to store your API key as a local environment variable.  
+* [wunderground](https://www.wunderground.com/weather/api/)
+* [developer.ciscospark.com](https://developer.ciscospark.com)
 
 ```
 export WEATHER_API_KEY=<YOUR KEY>
-```
-
-[item]: # (/slide)
-
-[item]: # (slide)
-The following examples will use the Cisco Spark API.  You'll need to have access to your Spark Developer Token to complete the exercises.  Find it at [developer.ciscospark.com](https://developer.ciscospark.com).  
-
-Once you have your API key, run these commands at your command line to store your API key and some other details as a local environment variable.  
-
-```
 export SPARK_TOKEN=<YOUR TOKEN>
 export MY_EMAIL=<YOUR EMAIL>
 export PARTNER_EMAIL=<A LAB PARTNERS EMAIL>
@@ -208,15 +214,27 @@ export PARTNER_EMAIL=<A LAB PARTNERS EMAIL>
 
 [item]: # (/slide)
 
-[item]: # (slide)
-## curl
+The following examples leverage the Weather.com API and Cisco Spark APIs.  Developer access to the APIs is free and accounts can be created at the links above.  
 
-curl is a general purpose command line utility for making requests to web servers.  It is often used for testing REST API calls, verifying a site is up and operational, or as part of bash scripts.  The number of potential arguments and options to curl can be mind-boggling, however knowing the following subset can be highly valuable as you get started.  
+Once you have the key/tokens, use the export statements to make them available for the exercises.  
+
+---
+
+[item]: # (slide)
+# curl
+
+```
+curl -H "Authorization: Bearer $SPARK_TOKEN" \
+		https://api.ciscospark.com/v1/teams
+```
 
 [item]: # (/slide)
 
+curl is a general purpose command line utility for making requests to web servers.  It is often used for testing REST API calls, verifying a site is up and operational, or as part of bash scripts.  The number of potential arguments and options to curl can be mind-boggling, however knowing the following subset can be highly valuable as you get started.  
+
+
 [item]: # (slide)
-### Examples and Exercises 
+# Examples and Exercises 
 
 [item]: # (/slide)
 
@@ -359,7 +377,7 @@ curl is a general purpose command line utility for making requests to web server
 	```
 	
 [item]: # (slide)
-### Links 
+## Links 
 
 * [http://www.thegeekstuff.com/2012/04/curl-examples/](http://www.thegeekstuff.com/2012/04/curl-examples/)
 * [http://www.slashroot.in/curl-command-tutorial-linux-example-usage](http://www.slashroot.in/curl-command-tutorial-linux-example-usage)
@@ -372,22 +390,38 @@ curl is a general purpose command line utility for making requests to web server
 
 * Escaping command characters
 
+	```
+	# Wrong
+	curl -u admin:cisco! 192.168.0.1/home 
+	
+	# Rigth
+	curl -u admin:cisco\! 192.168.0.1/home
+	```
+
 [item]: # (/slide)
 
+---
 
 [item]: # (slide)
-## awk
-
-awk is a very powerful pattern matching and processing program for lines of text.  Becoming a power user of awk will take years, but even a little bit of capability can be very helpful for processing text files (or more commonly, data returned from other programs).  
-
-[item]: # (/slide)
-
-[item]: # (slide)
-Here is a very basic awk command to disect
+# awk
 
 ```
 awk '/hello/ { print $2 }' hello.txt
 ```
+
+[item]: # (/slide)
+
+awk is a very powerful pattern matching and processing program for lines of text.  Becoming a power user of awk will take years, but even a little bit of capability can be very helpful for processing text files (or more commonly, data returned from other programs).  
+
+
+[item]: # (slide)
+## Example
+
+```
+awk '/hello/ { print $2 }' hello.txt
+```
+
+[item]: # (/slide)
 
 * `awk` - the program to run 
 * `'/hello/ { print $2 }'` - the action awk is being instructed to do
@@ -395,11 +429,10 @@ awk '/hello/ { print $2 }' hello.txt
 	* `{ print $2 }` - the second part is what to do with the match lines.  Here we are asking to print out the second field.  By default, awk considers whitespace to be field delimeters. 
 * `hello.txt` - the file to process
 
-[item]: # (/slide)
 
 [item]: # (slide)
 
-### Experiments
+# Experiments
 
 [item]: # (/slide)
 
@@ -450,24 +483,19 @@ awk '/hello/ { print $2 }' hello.txt
 	```
 
 [item]: # (slide)
-### Links 
-
-The above examples just introduce what awk can do.  Here are some links for when you need some more advanced details. 
+# Links 
 
 * [http://www.tutorialspoint.com/awk/awk_basic_examples.htm](http://www.tutorialspoint.com/awk/awk_basic_examples.htm)
 * [http://www.catonmat.net/download/awk.cheat.sheet.pdf](http://www.catonmat.net/download/awk.cheat.sheet.pdf)
 
 [item]: # (/slide)
 
-[item]: # (slide)
-## grep
+The above examples just introduce what awk can do.  Here are some links for when you need some more advanced details. 
 
-grep, and it's many variations, is a commonly used pattern matching utility.  It leverages regular expressions to output lines matching a given pattern.  Unlike awk, grep simply returns the matched lines as they are, no processing on output is done.  
-
-[item]: # (/slide)
+---
 
 [item]: # (slide)
-grep is often used as a secondary command where output from one command is "piped" to it for filtering.  This example shows a common usage. 
+# grep
 
 ```
 ls ~/coding | grep imapex
@@ -476,12 +504,28 @@ imapex
 imapex101
 ```
 
-The power of grep comes by leveraging actual regular expressions, and not just static patterns.  
+[item]: # (/slide)
+
+grep, and it's many variations, is a commonly used pattern matching utility.  It leverages regular expressions to output lines matching a given pattern.  Unlike awk, grep simply returns the matched lines as they are, no processing on output is done.  
+
+grep is often used as a secondary command where output from one command is "piped" to it for filtering.  This example shows a common usage. 
+
+[item]: # (slide)
+
+```
+ls ~/coding | grep imapex
+
+imapex
+imapex101
+```
 
 [item]: # (/slide)
 
+The power of grep comes by leveraging actual regular expressions, and not just static patterns.  
+
+
 [item]: # (slide)
-### Experiments 
+# Experiments 
 
 [item]: # (/slide)
 
@@ -529,22 +573,33 @@ you never know what you're going to get
 	```
 
 [item]: # (slide)
-### Links 
+# Links 
 
 * [http://ryanstutorials.net/linuxtutorial/cheatsheetgrep.php](http://ryanstutorials.net/linuxtutorial/cheatsheetgrep.php) 
 * [http://ryanstutorials.net/linuxtutorial/grep.php](http://ryanstutorials.net/linuxtutorial/grep.php)
 
 [item]: # (/slide)
 
+---
+
 [item]: # (slide)
 ## sed
 
-sed is the **s**tream **ed**itor tool in Unix.  Stream means is makes changes while it process data flowing through the application.  It is most often used for making changes to files (either in place or to create a new file).  
+```
+sed 's/XXXXX/api.localhost.com/' template.json > install.json
+```
 
 [item]: # (/slide)
 
 [item]: # (slide)
-### Experiments 
+sed is the **s**tream **ed**itor tool in Unix.  
+
+[item]: # (/slide)
+
+Stream means is makes changes while it process data flowing through the application.  It is most often used for making changes to files (either in place or to create a new file).  
+
+[item]: # (slide)
+# Experiments 
 
 [item]: # (/slide)
 
@@ -622,25 +677,41 @@ sed is the **s**tream **ed**itor tool in Unix.  Stream means is makes changes wh
 	```
 
 [item]: # (slide)
-### Links 
+# Links 
 
 * [http://www.grymoire.com/Unix/Sed.html](http://www.grymoire.com/Unix/Sed.html)
 * [http://www.catonmat.net/download/sed.stream.editor.cheat.sheet.pdf](http://www.catonmat.net/download/sed.stream.editor.cheat.sheet.pdf) 
 
 [item]: # (/slide)
 
+---
+
 [item]: # (slide)
-## bash scripts
+# bash scripts
+
+```
+#! /bin/bash 
+
+echo "What is the best color?"
+read color
+
+while [  $color != "blue" ]; do
+	echo "Incorrect... What is the best color?"
+	read color
+done
+
+echo "Correct!"
+```
+
+[item]: # (/slide)
 
 Using the above tools individually can be very helpful, but where you're most likely to use them will be as part of a bash script to setup or deploy your applicaiton.  Or as the entire application itself.  
 
 The simplest bash scripts just execute a command, or series of commands, but the most useful ones leverage processing logic similar to other scripting or programming languages.  Here we'll go through the most common constructs to be familiar using.  
 
-[item]: # (/slide)
 
 [item]: # (slide)
-### The sh-bang line
-Begin your scripts like this so the computer knows how to execute them.  
+## The sh-bang line
 
 ```
 #! /bin/bash
@@ -648,8 +719,10 @@ Begin your scripts like this so the computer knows how to execute them.
 
 [item]: # (/slide)
 
+Begin your scripts like this so the computer knows how to execute them.  
+
 [item]: # (slide)
-### Using variables 
+## Using variables 
 
 ```
 # Create a variable called myvar 
@@ -663,8 +736,7 @@ echo $myvar
 [item]: # (/slide)
 
 [item]: # (slide)
-### Asking user for input 
-You can ask the user to provide an input.  It then becomes available as a variable.  
+## Asking user for input 
 
 ```
 # Ask user for their name
@@ -673,14 +745,22 @@ echo "What is your name?"
 # "read" the input and save to variable 
 read username
 
+# Hide the input with -s
+echo "What is the secret word?"
+read -s secret
+
 echo "The name given was: $username."
+echo "The secret word was: $secret... don't tell anyone."
 
 ```
 
 [item]: # (/slide)
 
+You can ask the user to provide an input.  It then becomes available as a variable.  
+
+
 [item]: # (slide)
-### If statements 
+## If statements 
 
 ```
 if [ $username == "Hank" ]
@@ -694,25 +774,52 @@ fi
 [item]: # (/slide)
 
 [item]: # (slide)
-#### Basic Conditionals to know
+### String Conditionals to know
 
-* String comparisons 
-	* `==` - strings are equal 
-	* `!=` - strings are NOT equal 
-* Numeric Comparisons 
-	* `-eq` - equal 
-	* `-ne` - NOT equal 
-	* `-gt` - greater than 
-	* `-ge` - greater than or equal
-	* `-lt` - less than 
-	* `-le` - less than or equal
+* Equal
+	
+``` 
+$username == "Hank"
+```
+	
+* NOT Equal
+	
+```
+$username != "Hank"
+```
+
 
 [item]: # (/slide)
 
 [item]: # (slide)
-#### Testing success/failure of a command
+		
+### Numeric Comparisons to know 
 
-A very common usage of the if condition is to test if a previous command exited successfully, indicated by an exit code of `0`.  ANything other than a `0` is considered to be an error condition.  The variable `$?` will contain the exit code from the last run command.  Here is a simple script that verifies a successful execution of the previous command.  
+* Equal and NOT equal 
+	
+```
+$count -eq 42
+$count -ne 100
+```
+		
+* Greater Than and Less Than
+	
+```
+$count -gt 42
+$count -lt 100
+```
+	
+* Greater Than or Equal and Less Than or Equal
+	
+```
+$count -ge 42
+$count -le 100
+```	
+
+[item]: # (/slide)
+
+[item]: # (slide)
+## Testing success/failure of a command
 
 ```
 #! /bin/bash 
@@ -730,46 +837,40 @@ fi
 
 [item]: # (/slide)
 
+A very common usage of the if condition is to test if a previous command exited successfully, indicated by an exit code of `0`.  *Anything* other than a `0` is considered to be an error condition.  The variable `$?` will contain the exit code from the last run command.  Here is a simple script that verifies a successful execution of the previous command.  
+
+
 [item]: # (slide)
-### Loops 
-Looping in bash is a little different from other languages... 
+## Loops 
+
+### for loop
+
+```
+#!/bin/bash
+for i in $( ls ); do
+   echo item: $i
+done		
+```
+
+### while loop
+
+```
+#!/bin/bash 
+COUNTER=0
+while [  $COUNTER -lt 10 ]; do
+	echo The counter is $COUNTER
+	COUNTER=COUNTER+1 
+done	
+```	
 
 [item]: # (/slide)
 
-[item]: # (slide)
-* for loops - Used to iterate over a list of words in a string
-
-	```
-	#!/bin/bash
-   for i in $( ls ); do
-       echo item: $i
-   done		
-	```
-
-[item]: # (/slide)
+* for loop iterate over a list of words in a string
+* while loops loop until a condition is met
 
 [item]: # (slide)
-* while loops - Loops until a condition is met 
+### Common While loop... waiting for something to happen
 
-	```
-	#!/bin/bash 
-	COUNTER=0
-	while [  $COUNTER -lt 10 ]; do
-		echo The counter is $COUNTER
-		COUNTER=COUNTER+1 
-	done	
-	```	
-
-[item]: # (/slide)
-
-[item]: # (slide)
-#### Common use of While loop... waiting for something to happen
-
-In a script, you may want to wait for some previous command to have its full effect, or some other condition to come about.  You can use the while loop for this to test your condition, but it's a good idea to insert a `sleep` command in the loop to prevent your script from testing a condition to rapidly.  You can quickly have a negative effect on your own or remote machines by loops that are uncontrolled.  Here's an example with a sleep inserted to pause 5 seconds between entries.  
-
-[item]: # (/slide)
-
-[item]: # (slide)
 ```
 #!/bin/bash 
 COUNTER=0
@@ -782,8 +883,10 @@ done
 
 [item]: # (/slide)
 
+In a script, you may want to wait for some previous command to have its full effect, or some other condition to come about.  You can use the while loop for this to test your condition, but it's a good idea to insert a `sleep` command in the loop to prevent your script from testing a condition to rapidly.  You can quickly have a negative effect on your own or remote machines by loops that are uncontrolled.  Here's an example with a sleep inserted to pause 5 seconds between entries.  
+
 [item]: # (slide)
-### Links 
+# Links 
 
 * [http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
 * [https://linuxconfig.org/bash-scripting-tutorial](https://linuxconfig.org/bash-scripting-tutorial)
@@ -793,26 +896,26 @@ done
 [item]: # (/slide)
 
 [item]: # (slide)
-### Example script walkthrough 
+## Example script walkthrough 
+
+Sample: [myhero_install.sh](https://github.com/hpreston/myhero_demo/blob/master/myhero-install.sh)
+
+[item]: # (/slide)
 
 Let's look at an example real script used as part of the [MyHero Demo](https://github.com/hpreston/myhero_demo) application.  
 
-[Sample myhero_install.sh](https://github.com/hpreston/myhero_demo/blob/master/myhero-install.sh)
-
-[item]: # (/slide)
-
 [item]: # (slide)
-### Go do it exercises 
-
-This exercise will combine skills from the full Linux tools content.  
+## Go do it exercise
 
 * Create a bash script that does the following
-	* Ask the user for their Spark Token 
+	* Ask the user for their ***Spark Token*** 
 	* Use that token to make an API call to Spark and get a list of their Spark Rooms.  Save the outputed JSON into a file.  Be sure to format the JSON in a pretty way.  
-	* Search through the Saved file and create a new file containing the list of roomIds, and only the roomIds
+	* Search through the Saved file and create a new file containing the list of **roomIds**, and only the **roomIds**
 	* Create a new file based on the full returned room JSON where all double quotes are replaced with single quotes.  
 
 [item]: # (/slide)
+
+This exercise will combine skills from the full Linux tools content.  
 
 [item]: # (slide)
 
@@ -1193,6 +1296,699 @@ One of the nicest things about Vagrant, is the ability to embed the development 
 * Take a look at the [hpreston/myhero_data](https://github.com/hpreston/myhero_data) repo and read through the README section on development environments.  
 * Clone the repo locally and "vagrant up" the environment and try to interact with the microservice API.  
 * Review the Vagrantfile and Vagrantfile.host and see if you can follow how they work together to provide a Docker environment with Vagrant
+
+
+[item]: # (/slide)
+
+[item]: # (slide)
+# OpenSource Licenses 
+
+[item]: # (/slide)
+
+[item]: # (slide)
+## What is OpenSource 
+
+"Open source software is software with source code that anyone can inspect, modify, and enhance." [OpenSource.com](https://opensource.com/resources/what-open-source) 
+
+[item]: # (/slide)
+
+[item]: # (slide)
+#### Is OpenSource "Free"?
+
+No... sorta... not really... 
+
+OpenSource licenses often require the software be free to distribute, but there is typically no limitation on charging for Support, Installation, Troubleshooting, etc.  ie RedHat's Model 
+
+Also, developing OpenSource software is no simpler than developing proprietary software.  Some projects are done as side projects, but many are done by paid programmers.  
+
+[item]: # (/slide)
+
+[item]: # (slide)
+#### Why do people like OpenSource? 
+
+Lots of reasons... many cite
+
+* Control
+* Training
+* Security
+* Stability 
+
+[item]: # (/slide)
+
+[item]: # (slide)
+#### Is OpenSource inherintly better, more stable, more secure?  
+
+Nope... remember [Heartbleed](https://en.wikipedia.org/wiki/Heartbleed)
+
+
+[item]: # (/slide)
+
+[item]: # (slide)
+### Considerations for Choosing One
+
+Any software product has a "license" that is attached.  We see and agree to these licenses all the time, but we've become so accustomed to "Click to accept" that we don't even realize it.  
+
+With OpenSource Projects, you could write your own license that said whatever you wanted, but that's kinda boring.  So there are several available options that are often used.  
+
+Licenses will typically address the following characteristics. And their treatment of each often determines what license makes sense for a project.  
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+#### Permissions
+What are you allowed to do... 
+
+* **Use - Commercial vs Private**
+	* Can you use the software to make money
+* **Distribution**
+	* Are you allowed to freely distribute the software
+* **Modification**
+	* Are you allowed to change the software
+* **Patent Use**
+	* Can you use the software as part of a patent
+
+[item]: # (/slide)
+
+[item]: # (slide)
+#### Conditions
+What must you do... 
+
+* **OpenSource** 
+	* Actually provide the source code 
+* **License and Copyright Notificaitons** 
+	* Clearly indicate that you are using the licensed products 
+* **Copyleft**
+	* Whether other products, products must use the same license 
+* **State Changes**
+	* Explicitly state all changes  
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+#### Limiations
+Protections and other footnotes
+
+* **Liability**
+	* Whether the creator can be held liable for damages
+* **Trademark Use**
+	* Usage related to trademarking. 
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+## Some Common Licenses 
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+### MIT license
+A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+
+[MIT License](http://choosealicense.com/licenses/mit/)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+### GNU General Public License (GPL)
+Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
+
+[GNU GPL License](http://choosealicense.com/licenses/gpl-3.0/)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+### GNU Library or "Lesser" General Public License (LGPL)
+Permissions of this copyleft license are conditioned on making available complete source code of licensed works and modifications under the same license or the GNU GPLv3. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. However, a larger work using the licensed work through interfaces provided by the licensed work may be distributed under different terms and without source code for the larger work.
+
+[GNU LGPL License](http://choosealicense.com/licenses/lgpl-3.0/)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+### Apache License 2.0
+A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+
+[Apache License](http://choosealicense.com/licenses/apache-2.0/)
+
+
+[item]: # (/slide)
+
+[item]: # (slide)
+## Links (and sources)
+
+* [https://opensource.com/resources/what-open-source](https://opensource.com/resources/what-open-source)
+* [https://en.m.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses](https://en.m.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses)
+* [http://choosealicense.com/licenses/](http://choosealicense.com/licenses/)
+* [https://opensource.com/education/12/7/clearing-open-source-misconceptions](https://opensource.com/education/12/7/clearing-open-source-misconceptions)
+
+
+[item]: # (/slide)
+
+[item]: # (slide)
+## Why Do We Care? 
+
+OpenSource has always been popular, but its popularity is raising at a very fast level.  We are seeing large enterprises, across verticles, embracing OpenSource Software like never before.  And this is in some very critical areas where traditionally they would have selected a more traditional commercial vendor.  Even commercial software vendors, traditionally very anti-OpenSource, are starting to embrace OpenSource in a big way.  This could be as a user, contributor, or initiator of projects.  
+
+Not all OpenSource projects and licenses are the same though, and as you jump into this world as an individual, you need to be able to differentiate between the different licenses that you'll run into so you can make apprporiate decisions about which projects to use and contribute to.  Also, deciding on an appropriate license for your own projects is an important decision that can have significant consequenses.  
+
+[item]: # (/slide)
+
+[item]: # (slide)
+## Go Do It Exercises 
+
+Look at some popular OpenSource projects and find the license that they are published under.  Here are some ideas, but feel free to look elsewhere.  
+
+* Ubuntu
+* Apache
+* HA-Proxy
+* Cisco Mantl
+* Terraform
+* Vagrant
+* Cisco Contiv
+
+[item]: # (/slide)
+
+[item]: # (slide)
+# Python Skills 
+
+[item]: # (/slide)
+
+[item]: # (slide)
+##The Zen of Python
+
+```
+Beautiful is better than ugly. 
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than right now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+—Tim Peters
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+## pip
+
+Python uses pip to install and manage packages and optional modules.  Likely you've used it already, but here we're going to talk about how to use it and capture details for packaging into your application.  
+
+The common practice with python applciations is to include a file called `requirements.txt` that lists out all the packages needed for an application.  
+
+[item]: # (/slide)
+
+[item]: # (slide)
+## virtualenv
+
+Virtual Environments are a capability of Python to create isolated working environments on a single machine with completely different configuraitons and dependencies deployed.  Nearly everyone in IT has horror stories of dependency conflicts between software installed on the same computer.  
+
+[item]: # (/slide)
+
+One example that came up quite a bit in the past was software that leveraged a component of Microsoft Office (ie Word or Excel) as part of its functionality.  Most of these cases required a very specific, and often outdated, version of Office to function.  This would mean that users were unable to update Office on their computers, because it would break some other software.  To solve the, several enterprises leveraged Citrix to isolate applacation environments from one another.  
+
+The second factor in the 12 Factors talks about isolating dependencies.  Virtual Environments, or virtualenv, within Python provide a very easy and elegant way to accomplish this for Python applications.  You can have two different Python programs, running on the same host, leveraging completley different versions of a module.  
+
+A secondary benefit, but very important as well, is the ability to limit the modules added to a virtualenv to just those needed by the software.  If you were to use a single environment for every possible Python applciation you might run, you'll end up with hundreds of different packages installed.  And like anything in IT, that level of complexity will often lead to problems. 
+
+
+[item]: # (slide)
+### Experiments
+
+[item]: # (/slide)
+
+**PIP EXPERIMENTS** 
+*In these experiements, you're output will likley differ greatly as you're querying your local Python installation.* 
+
+* Let's take a look at the currently installed packages
+
+	```
+	pip freeze
+	
+	You are using pip version 7.1.0, however version 8.1.2 is available.
+	You should consider upgrading via the 'pip install --upgrade pip' command.
+	argumentparser==1.2.1
+	Flask==0.10.1
+	itsdangerous==0.24
+	Jinja2==2.8
+	MarkupSafe==0.23
+	Werkzeug==0.11.5
+	wheel==0.24.0
+	
+	```
+	
+	* `pip freeze` queries the active python interpreter for all installed modules and their versions.  It then outputs it in the displayed format that can be fed into a `pip install` command to ensure proper dependencies are met.
+* Use `pip freeze` to create a requirements.txt file for a project 
+
+	```
+	pip freeze > requirements.txt 
+	
+	cat requirements.txt 
+	
+	argumentparser==1.2.1
+	Flask==0.10.1
+	itsdangerous==0.24
+	Jinja2==2.8
+	MarkupSafe==0.23
+	Werkzeug==0.11.5
+	wheel==0.24.0
+	
+	```
+
+* You would include the `requirements.txt` file in your code repo to document dependencies.  
+* Then in setup instructions, Dockerfiles, Vagrantfiles, or other areas where you are installing your software, you'd use the file like this to install the proper dependencies into the working environment for your application.  
+
+	```
+	pip install -r requirements.txt 
+	
+	```
+
+	* In this case, we just read the current state to create the file, so you'll likely get notes back that `Requirement already satisfied`
+
+**VENV EXPERIMENTS**
+### Experiments
+
+* Install virtualenv on your workstation using pip
+
+	```
+	pip install virtualenv 
+	```
+
+* Create a new folder for this experiement 
+
+	``` 
+	mkdir imapex101venvlab
+	cd imapex101venvlab
+	
+	```
+
+* Create a new virtualenv in this directory.  It will create a new folder called `venv` containing an independent copy of python as well as pip for module management 
+	
+	```
+	virtualenv venv 
+	
+	New python executable in /Users/hapresto/coding/imapex101/examples/imapex101venvlab/venv/bin/python
+	Installing setuptools, pip, wheel...done.
+	
+	```
+	
+* You need to activate the new virtualenv to use it
+
+	```
+	source venv/bin/activate 
+	
+	# this will change your prompt to indicate you are now in the environment
+	(venv) imapex101venvlab $
+	
+	# to return to your main/default environment
+	deactivate
+	
+	# And reenter 
+	source venv/bin/activate 
+	```
+
+* Check current module installation status
+
+	```
+	pip freeze 
+	
+	# Nothing should be returned
+	# Compare this to what we saw in the pip exercises 
+	
+	```
+
+* Install a module in the environment and verify status
+
+	```
+	pip install requests 
+	
+	Collecting requests
+	  Using cached requests-2.10.0-py2.py3-none-any.whl
+	Installing collected packages: requests
+	Successfully installed requests-2.10.0
+	
+	pip freeze 
+	
+	requests==2.10.0
+	
+	```
+
+* Create a requirements.txt file from the current status
+
+	```
+	pip freeze > requirements.txt 
+	
+	```
+
+* Update the requirements.txt file to add a new dependency 
+
+	```
+	echo "Flask==0.10.1" >> requirements.txt 
+	
+	# Verify the new file 
+	cat requirements.txt
+	
+	requests==2.10.0
+	Flask==0.10.1
+	```
+
+* Use pip to read in the requirements and verify the virtualenv meets all needed requirements.  
+
+	```
+	pip install -r requirements.txt
+	
+	Requirement already satisfied (use --upgrade to upgrade): requests==2.10.0 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 1))
+	Collecting Flask==0.10.1 (from -r requirements.txt (line 2))
+	Collecting itsdangerous>=0.21 (from Flask==0.10.1->-r requirements.txt (line 2))
+	Collecting Werkzeug>=0.7 (from Flask==0.10.1->-r requirements.txt (line 2))
+	  Using cached Werkzeug-0.11.10-py2.py3-none-any.whl
+	Collecting Jinja2>=2.4 (from Flask==0.10.1->-r requirements.txt (line 2))
+	  Using cached Jinja2-2.8-py2.py3-none-any.whl
+	Collecting MarkupSafe (from Jinja2>=2.4->Flask==0.10.1->-r requirements.txt (line 2))
+	Installing collected packages: itsdangerous, Werkzeug, MarkupSafe, Jinja2, Flask
+	Successfully installed Flask-0.10.1 Jinja2-2.8 MarkupSafe-0.23 Werkzeug-0.11.10 itsdangerous-0.24 
+	```
+
+* Deactivate the virtualenv 
+
+	```
+	deactivate 
+	```
+	
+[item]: # (slide)
+
+### Links
+
+* [https://www.fullstackpython.com/application-dependencies.html](https://www.fullstackpython.com/application-dependencies.html)
+* [https://devcenter.heroku.com/articles/python-pip](https://devcenter.heroku.com/articles/python-pip)
+* [https://tech.knewton.com/blog/2015/09/best-practices-for-python-dependency-management/](https://tech.knewton.com/blog/2015/09/best-practices-for-python-dependency-management/)
+* [http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+* [https://virtualenvwrapper.readthedocs.io/en/latest/](https://virtualenvwrapper.readthedocs.io/en/latest/)
+
+
+[item]: # (/slide)
+
+[item]: # (slide)
+### Why do we care
+
+It is up to the developer today to consider dependencies when building applciations, and if you follow the 12 Factor App principals, declaration and islotation are critical.  As we're setting out to build application demos, understanding how to address dependencies is critical to providing useful applicaitons, and not just toy-code.  
+
+Every language and framework for development has dependencies.  One part of learning a language you plan to use for application or demo development needs to be a consideration on how they are handled and documented.  You'll want to find the equivelant of *pip* in whichever langague you are using.  
+
+
+[item]: # (/slide)
+
+[item]: # (slide)
+### Why do we care
+
+In development today, it is not only good practice, but it's expected to provide software with dependency isolation.  If you're building a python application that will be downloaded and ran on a host, virtualenv for python is a standard way to do this.  
+
+However, more and more applciations are being packaged in containers (typically Docker containers) which provide a level of isolation even higher than a simple Virtual Environment.  You could create a Virtual Environment within a container, but if you are practicing good container strategy, that is likely not needed as part of final delivery.  
+
+Though, in the development phase, you may choose to use virtualenv to develop within to avoid the extra steps of rebuilding a new container for every update and test.
+
+[item]: # (/slide)
+
+[item]: # (slide)
+### Go do it Exercises 
+
+This exercise will combine the pip and virtualenv skills together.  As well as give you something new to extend the virtualenv skills to research... 
+
+* Take a look at this sample django application on GitHub [kirpit/django-sample-app](https://github.com/kirpit/django-sample-app)
+* Review the README, this lab is about setting up this application within a virtual environment on your workstation 
+* Step 1 in the installation references a tool called **virtualenvwrapper**.  Check the link above that describes its value and install it with pip 
+* Run through the installation of the sample application and start the web server
+
+
+[item]: # (/slide)
+
+[item]: # (slide)
+# Writing Test Cases
+
+> “Testing is an infinite process of comparing the invisible to the ambiguous in order to avoid the unthinkable
+> happening to the anonymous.”— James Bach
+
+[item]: # (/slide)
+
+[item]: # (slide)
+Whenever possible, any code that is going to be deployed as part of a CI/CD pipeline should include test cases. Ensuring
+that a project has a good testing suite provides the following benefits:
+
+* Requires less background knowledge for other developers to contribute
+* Reduces failed deployments
+* Makes code refactoring easier
+* Helps identify where additional validation logic is required
+
+[item]: # (/slide)
+
+Software testing has become so important that it is now evolving in Agile shops to the notion of test driven development,
+which is to say, we will write our software tests before the code they will test is actually written.
+
+While critically important, testing is very much an art vs a science, which forces you to think about your code differently
+when writing code, you are primarily focused on how it will work.  Tests on the other hand, can force you to think about
+how it can break, and therefore with testing as a top of mind, you can incorporate those thoughts into the coding cycle
+and produce a more robust feature.
+
+
+[item]: # (slide)
+## Enough with the talk, let's write some code.
+
+[item]: # (/slide)
+Let's assume we are working on a project that defines the following helper function
+
+
+```
+
+def doubler(n):
+    """
+    A simple doubler function
+    :param n: int
+    :return: int
+    """
+    return 2 * n
+
+```
+
+What do we know about the code, in the case of *doubler()* we know from the code that it takes an integer as an input
+and returns an integer equal to two times the input. Great.. so what? In this simple example, not much can go wrong, but
+we should test to document what the use case was for using after all what about the following usages?
+
+```
+print doubler(2)
+print doubler('2')
+
+```
+
+As we've written these functions, we've made some assumptions about how they will be used, and by whom, but we also should
+document those assumptions in the form of a test case(s).. We know we want to test a couple things.
+
+* The function works - 2 x 2 = 4 and 4 x 2 = 8
+* The function should receive an integer
+* The function should return an integer
+
+So let's get started. Python unittests is a common library used for testing, and the easiest to get started with.
+
+```
+import unittest
+
+class HelperFunctionTests(unittest.TestCase):
+    def test_001_valid_type_is_returned(self):
+        print "Executing test {}".format(self)
+        test = doubler(2)
+        self.assertIsInstance(test, int)
+
+
+    def test_002_double_4(self):
+        print "Executing test {}".format(self)
+        test = doubler(4)
+        self.assertEqual(test, 8)
+
+
+unittest.main()
+```
+
+Which should result in the following output
+
+```
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+Executing test test_001_valid_type_is_returned (__main__.HelperFunctionTests)
+Executing test test_002_double_4 (__main__.HelperFunctionTests)
+
+OK
+```
+[item]: # (slide)
+### Quick Tips
+* All test methods must start with test* or they will not be executed
+* Tests must work isolated from one another
+* Tests are executed in order by their name using pythons built-in ordering for strings
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+## More code
+
+[item]: # (/slide)
+
+So we've accounted for all of the appropriate uses of our functions, but what happens if we start to think about how
+it could break?  As we noted earlier, doubler('2') may or may not be very helpful, so let's try a test-driven development
+approach assuming we wanted to add input validation to the doubler function and throw an exception if we don't receive
+an integer
+
+
+```
+import unittest
+
+class HelperFunctionTests(unittest.TestCase):
+    def test_001_valid_type_is_returned(self):
+        test = doubler(2)
+        self.assertIsInstance(test, int)
+
+
+    def test_002_double_4(self):
+        test = doubler(4)
+        self.assertEqual(test, 8)
+
+    def test_003_invalid_type_raises_error(self):
+        with self.assertRaises(TypeError):
+            test = doubler('2')
+
+unittest.main()
+
+```
+
+This time around executing our code we get the following:
+
+```
+..F
+======================================================================
+FAIL: test_003_invalid_type_raises_error (__main__.HelperFunctionTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/kecorbin/Library/Preferences/PyCharm50/scratches/scratch_1", line 41, in test_003_invalid_type_raises_error
+    test = doubler('2')
+AssertionError: TypeError not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=1)
+```
+
+So we've verified the condition we are attempting to correct though the use of a test case, now let's modify our function
+and add some input validation
+
+```
+def doubler(n):
+    """
+    A slightly more robust doubler function
+    :param n: int
+    :return: int
+    """
+    if isinstance(n, int):
+        return 2 * n
+    else:
+        raise TypeError('n must be of type integer')
+
+```
+
+And with our more robust helper function in place, we'll test the code again.
+
+```
+...
+----------------------------------------------------------------------
+
+Ran 3 tests in 0.000s
+
+OK
+
+```
+
+By leveraging a test-driven development approach, we've verified that we've successfully implemented the enhancement that
+we intended to, and best of all once the code is done, we don't have to worry about writing tests!!!
+
+[item]: # (slide)
+
+# Linting
+
+> At the end of the day, ship the fucking thing! It’s great to rewrite your code and make it cleaner and by the
+> third time it’ll actually be pretty. But that’s not the point—you’re not here to write code;
+> you’re here to ship products. - Jamie Zawinsky
+
+[item]: # (/slide)
+
+Linting refers to a static code analysis for issues with the code, largely related to coding style, but also issues that may cause bugs to manifest down the road.  
+
+[item]: # (slide)
+The python community provides guidance on coding convention and style through [PEP](https://www.python.org/dev/peps/pep-0008/). Linters are a good way of verifying that the code you have written conforms to PEP.  A simple example of a linter for python is [flake8](http://flake8.pycqa.org/en/latest/) which is available via pypi
+
+```
+pip install flake8 
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+Once installed linting your code is as easy as typing 
+
+``` 
+flake8 mycode.py
+```
+    
+Or for a larger project, you can simply run flake8 from the root of your project. 
+
+[item]: # (/slide)
+
+[item]: # (slide)
+### What are you waiting for, Give it a try on some of your code!!!!!
+
+[item]: # (/slide)
+
+[item]: # (slide)
+### Tips:
+* Sometimes you may choose to ignore certain errors that flake8 will throw, [here](http://flake8.pycqa.org/en/latest/user/ignoring-errors.html) is a good resource on ignoring them. Cliffs note version, end a line w/ 
+   
+```
+# flake8: noqa
+```
+
+* You can also version control the configuration for flake8 by adding a .flake8 file to the root of your project, here's a sample
+
+```
+[flake8]
+ignore = D203
+exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
+max-complexity = 10
+```
+
+[item]: # (/slide)
+
+
+
+
+
+
+
 
 
 

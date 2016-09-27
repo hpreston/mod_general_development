@@ -1,9 +1,12 @@
-* for loops - Used to iterate over a list of words in a string
+### Common While loop... waiting for something to happen
 
-	```
-	#!/bin/bash
-   for i in $( ls ); do
-       echo item: $i
-   done		
-	```
+```
+#!/bin/bash 
+COUNTER=0
+while [  $COUNTER -lt 10 ]; do
+	echo The counter is $COUNTER
+	COUNTER=COUNTER+1 
+	sleep 5
+done	
+```	
 

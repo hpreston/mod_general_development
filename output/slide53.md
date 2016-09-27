@@ -1,12 +1,4 @@
+### Sidebar on Docker
 
-### Before Vagrant
-
-Before Vagrant... developers used one of the following methods when developing softare
-
-* Locally on their physical machine 
-* Request Virtual Machines for development from IT or other source 
-* Run their own VM platform
-	* On a personal dedicated server.  The ESX server in the corner or under the desk.  
-	* With something like Virtual Box or VM Fusion on their workstation.  
-* Or whatever else they could come up with.  
+Vagrant is often thought of, and started out, as a VM based tool.  With the push in development towards containers, and Docker specifically, it is now often used for container based development as well.  There are two ways to work with Docker containers and Vagrant
 

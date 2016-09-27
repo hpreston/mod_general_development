@@ -1,6 +1,12 @@
-### Example script walkthrough 
 
-Let's look at an example real script used as part of the [MyHero Demo](https://github.com/hpreston/myhero_demo) application.  
+### Before Vagrant
 
-[Sample myhero_install.sh](https://github.com/hpreston/myhero_demo/blob/master/myhero-install.sh)
+Before Vagrant... developers used one of the following methods when developing softare
+
+* Locally on their physical machine 
+* Request Virtual Machines for development from IT or other source 
+* Run their own VM platform
+	* On a personal dedicated server.  The ESX server in the corner or under the desk.  
+	* With something like Virtual Box or VM Fusion on their workstation.  
+* Or whatever else they could come up with.  
 

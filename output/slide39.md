@@ -1,11 +1,18 @@
-### Using variables 
+## Asking user for input 
 
 ```
-# Create a variable called myvar 
-myvar="Hello world!"
+# Ask user for their name
+echo "What is your name?"
 
-# Use the variable 
-echo $myvar
+# "read" the input and save to variable 
+read username
+
+# Hide the input with -s
+echo "What is the secret word?"
+read -s secret
+
+echo "The name given was: $username."
+echo "The secret word was: $secret... don't tell anyone."
 
 ```
 

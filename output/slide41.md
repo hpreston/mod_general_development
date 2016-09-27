@@ -1,11 +1,15 @@
-### If statements 
+### String Conditionals to know
 
+* Equal
+	
+``` 
+$username == "Hank"
 ```
-if [ $username == "Hank" ]
-then 
-	echo "You are Hank."
-else
-	echo "Nope... you are not Hank."
-fi
+	
+* NOT Equal
+	
 ```
+$username != "Hank"
+```
+
 

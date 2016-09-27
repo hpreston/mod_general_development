@@ -1,13 +1,8 @@
+#### Is OpenSource "Free"?
 
-## Go do it Exercises 
+No... sorta... not really... 
 
-One of the nicest things about Vagrant, is the ability to embed the development environment into the code repositories.  You will find many code repo's that include a Vagrantfile to make development easier.  
+OpenSource licenses often require the software be free to distribute, but there is typically no limitation on charging for Support, Installation, Troubleshooting, etc.  ie RedHat's Model 
 
-* Take a look at the [hpreston/myhero_data](https://github.com/hpreston/myhero_data) repo and read through the README section on development environments.  
-* Clone the repo locally and "vagrant up" the environment and try to interact with the microservice API.  
-* Review the Vagrantfile and Vagrantfile.host and see if you can follow how they work together to provide a Docker environment with Vagrant
-
-
-
-
+Also, developing OpenSource software is no simpler than developing proprietary software.  Some projects are done as side projects, but many are done by paid programmers.  
 

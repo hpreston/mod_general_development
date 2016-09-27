@@ -1,2 +1,9 @@
-**Factor III: Config** talks about NOT including environment details in your code, but rather in the environment.  In many cases the "environment details" also qualify as **secrets** and you need to take care about how you are storing and transporting them throughout application development and deployment process.  It is very easy to commit secrets into a codebase (ie GitHub) and mistakeningly make your usernames and passwords publicly available on GitHub.
+### Also Secrets
+
+* Application and Server Names 
+* API Endpoints and addresses 
+* Email Addresses 
+* IP Addresses and Port Numbers
+* Domain Names 
+* just about anythind descriptive about your environment... 
 

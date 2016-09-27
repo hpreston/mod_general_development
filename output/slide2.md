@@ -1,6 +1,6 @@
 # Main Topics
 
-* [12 Factor Concepts](#12-factor-concepts)
+* [12 Factor Application](#12-factor-application)
 * [Basic Linux Tools](#basic-linux-tools)
 * [Markdown](#markdown)
 * [Vagrant](#vagrant)

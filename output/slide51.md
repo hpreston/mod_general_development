@@ -1,10 +1,8 @@
-### Go do it exercises 
+All of these options presented many problems
 
-This exercise will combine skills from the full Linux tools content.  
-
-* Create a bash script that does the following
-	* Ask the user for their Spark Token 
-	* Use that token to make an API call to Spark and get a list of their Spark Rooms.  Save the outputed JSON into a file.  Be sure to format the JSON in a pretty way.  
-	* Search through the Saved file and create a new file containing the list of roomIds, and only the roomIds
-	* Create a new file based on the full returned room JSON where all double quotes are replaced with single quotes.  
+* Time delays in getting new development environments
+* Managing their own dev platforms 
+* Significant Differences between Dev and Production
+* Shared development environments for multiple projects 
+* Rebuilding a new environment takes time
 

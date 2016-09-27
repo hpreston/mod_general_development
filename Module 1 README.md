@@ -1394,6 +1394,7 @@ A secondary benefit, but very important as well, is the ability to limit the mod
 	```
 	deactivate 
 	```
+	
 ### Links
 
 * [http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
@@ -1604,7 +1605,7 @@ The python community provides guidance on coding convention and style through [P
 
      pip install flake8 
      
- Once installed linting your code is as easy as typing 
+Once installed linting your code is as easy as typing 
  
      flake8 mycode.py
     

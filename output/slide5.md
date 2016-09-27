@@ -1,4 +1,4 @@
-## The Factors 
+# The Factors 
 
 ### I. [Codebase](http://12factor.net/codebase)
 One codebase tracked in revision control, many deploys

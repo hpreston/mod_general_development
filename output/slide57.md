@@ -1,5 +1,5 @@
 
-#### Option 1: Direct Docker Support
+## Experiments 
 
-If your underlying computer can support running containers natively, Vagrant can directly deploy containers to the Docker daemon on your workstation (or a remote host).  
+We'll create a new directory and walk through some basic Vagrant exercises.  
 

@@ -1,13 +1,24 @@
-#### Basic Conditionals to know
+		
+### Numeric Comparisons to know 
 
-* String comparisons 
-	* `==` - strings are equal 
-	* `!=` - strings are NOT equal 
-* Numeric Comparisons 
-	* `-eq` - equal 
-	* `-ne` - NOT equal 
-	* `-gt` - greater than 
-	* `-ge` - greater than or equal
-	* `-lt` - less than 
-	* `-le` - less than or equal
+* Equal and NOT equal 
+	
+```
+$count -eq 42
+$count -ne 100
+```
+		
+* Greater Than and Less Than
+	
+```
+$count -gt 42
+$count -lt 100
+```
+	
+* Greater Than or Equal and Less Than or Equal
+	
+```
+$count -ge 42
+$count -le 100
+```	
 

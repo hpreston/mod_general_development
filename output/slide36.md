@@ -1,5 +1,16 @@
-### Links 
+# bash scripts
 
-* [http://www.grymoire.com/Unix/Sed.html](http://www.grymoire.com/Unix/Sed.html)
-* [http://www.catonmat.net/download/sed.stream.editor.cheat.sheet.pdf](http://www.catonmat.net/download/sed.stream.editor.cheat.sheet.pdf) 
+```
+#! /bin/bash 
+
+echo "What is the best color?"
+read color
+
+while [  $color != "blue" ]; do
+	echo "Incorrect... What is the best color?"
+	read color
+done
+
+echo "Correct!"
+```
 

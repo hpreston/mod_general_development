@@ -1,7 +1,11 @@
-### The sh-bang line
-Begin your scripts like this so the computer knows how to execute them.  
+## Using variables 
 
 ```
-#! /bin/bash
+# Create a variable called myvar 
+myvar="Hello world!"
+
+# Use the variable 
+echo $myvar
+
 ```
 

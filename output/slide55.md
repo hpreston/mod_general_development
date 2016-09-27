@@ -1,17 +1,4 @@
+#### Option 2: Docker inside a VM
 
-### Supported Development Environment
-
-Vagrant is often used along with Virtualbox to provide a local dev environment on the developers own computer, but it can also leverage other providers.  
-
-Out of the box support for 
-
-* Virtualbox 
-* Docker
-* Hyper-V
-
-Plugins available for 
-
-* VMware
-* AWS
-* Others... 
+For a long time, you could only run Docker natively on a Linux OS.  To run Docker on Mac or Windows you needed to run a Linux based VM, and then run Docker inside the VM.  Technologies like Docker Toolbox, Docker Machine, and boot2docker all worked to make this easier.  Vagrant can use this model to also support Docker development by first creating a host VM, installing Docker into the VM, and then deploying containers on the VM.  
 
