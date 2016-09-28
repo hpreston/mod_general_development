@@ -1,2 +1,7 @@
-### What are you waiting for, Give it a try on some of your code!!!!!
+## Python Linter - Flake8
+
+```
+pip install flake8 
+flake8 mycode.py
+```
 

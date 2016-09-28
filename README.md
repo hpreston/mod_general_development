@@ -1,6 +1,9 @@
 [item]: # (slide)
 
+![](http://imapex.io/images/imapex_standing_text_sm.png)
+
 # Module: General Development
+
 
 [item]: # (/slide)
 
@@ -390,13 +393,13 @@ curl is a general purpose command line utility for making requests to web server
 
 * Escaping command characters
 
-	```
-	# Wrong
-	curl -u admin:cisco! 192.168.0.1/home 
+```
+# Wrong
+curl -u admin:cisco! 192.168.0.1/home 
 	
-	# Rigth
-	curl -u admin:cisco\! 192.168.0.1/home
-	```
+# Rigth
+curl -u admin:cisco\! 192.168.0.1/home
+```
 
 [item]: # (/slide)
 
@@ -1707,9 +1710,11 @@ Though, in the development phase, you may choose to use virtualenv to develop wi
 
 [item]: # (/slide)
 
-[item]: # (slide)
 Whenever possible, any code that is going to be deployed as part of a CI/CD pipeline should include test cases. Ensuring
 that a project has a good testing suite provides the following benefits:
+
+[item]: # (slide)
+## Benefits of good testing
 
 * Requires less background knowledge for other developers to contribute
 * Reduces failed deployments
@@ -1718,83 +1723,194 @@ that a project has a good testing suite provides the following benefits:
 
 [item]: # (/slide)
 
-Software testing has become so important that it is now evolving in Agile shops to the notion of test driven development,
-which is to say, we will write our software tests before the code they will test is actually written.
+[item]: # (slide)
 
-While critically important, testing is very much an art vs a science, which forces you to think about your code differently
-when writing code, you are primarily focused on how it will work.  Tests on the other hand, can force you to think about
-how it can break, and therefore with testing as a top of mind, you can incorporate those thoughts into the coding cycle
+# Test Driven Development
+
+[item]: # (/slide)
+
+Software testing has become so important that it is now evolving in Agile shops to the notion of test driven development, which is to say, we will write our software tests before the code they will test is actually written.
+
+While critically important, testing is very much an art vs a science.  It forces you to think about your code differently.  When writing code, you are primarily focused on how it will work.  Tests on the other hand, can force you to think about how it can break.  Therefore with testing as a top of mind, you can incorporate those thoughts into the coding cycle
 and produce a more robust feature.
 
 
 [item]: # (slide)
-## Enough with the talk, let's write some code.
+# Exercises
 
 [item]: # (/slide)
-Let's assume we are working on a project that defines the following helper function
 
+* Create a new directory for our testing project, and create a new virtual environment within it.  
 
-```
+	```
+	mkdir imapex101_testing_example
+	cd imapex101_testing_example
+	virtualenv venv 
+	source venv/bin/activate 
+	```
 
-def doubler(n):
-    """
-    A simple doubler function
-    :param n: int
-    :return: int
-    """
-    return 2 * n
+* Create a new file called `doubler.py` with the following function.  
 
-```
+	```	
+	def doubler(n):
+	    """
+	    A simple doubler function
+	    :param n: int
+	    :return: int
+	    """
+	    
+	    return 2 * n	
+	```
 
-What do we know about the code, in the case of *doubler()* we know from the code that it takes an integer as an input
-and returns an integer equal to two times the input. Great.. so what? In this simple example, not much can go wrong, but
-we should test to document what the use case was for using after all what about the following usages?
+* What do we know about the code?  In the case of `doubler()` we know from the code that it takes an integer as an input and returns an integer equal to two times the input. Great.. so what? In this simple example, not much can go wrong, but we should test to document what the use case was.  
 
-```
-print doubler(2)
-print doubler('2')
+	```
+	python -i
+	
+	from doubler import doubler
+	
+	print doubler(2)
+	print doubler('2')
+	
+	```
 
-```
+* Did you get what you expected?  Why not?   
+* As we've written these functions, we've made some assumptions about how they will be used, and by whom.  We also should document those assumptions in the form of a test case(s).. We know we want to test a couple things.
+	* The function works - 2 x 2 = 4 and 4 x 2 = 8
+	* The function should receive an integer
+	* The function should return an integer
 
-As we've written these functions, we've made some assumptions about how they will be used, and by whom, but we also should
-document those assumptions in the form of a test case(s).. We know we want to test a couple things.
+* So let's get started. Python unittests is a common library used for testing, and the easiest to get started with.
+* Create a new file `tests.py` with the following contents.
 
-* The function works - 2 x 2 = 4 and 4 x 2 = 8
-* The function should receive an integer
-* The function should return an integer
+	```
+	import unittest
+	from doubler import doubler
+	
+	class HelperFunctionTests(unittest.TestCase):
+	    def test_001_valid_type_is_returned(self):
+	        print "Executing test {}".format(self)
+	        test = doubler(2)
+	        self.assertIsInstance(test, int)
+	
+	
+	    def test_002_double_4(self):
+	        print "Executing test {}".format(self)
+	        test = doubler(4)
+	        self.assertEqual(test, 8)
+	
+	
+	unittest.main()
+	```
 
-So let's get started. Python unittests is a common library used for testing, and the easiest to get started with.
+* Run the new file
 
-```
-import unittest
+	```
+	python tests.py
+	```
 
-class HelperFunctionTests(unittest.TestCase):
-    def test_001_valid_type_is_returned(self):
-        print "Executing test {}".format(self)
-        test = doubler(2)
-        self.assertIsInstance(test, int)
+* Which should result in the following output
 
+	```
+	..
+	----------------------------------------------------------------------
+	Ran 2 tests in 0.000s
+	Executing test test_001_valid_type_is_returned (__main__.HelperFunctionTests)
+	Executing test test_002_double_4 (__main__.HelperFunctionTests)
+	
+	OK
+	```
 
-    def test_002_double_4(self):
-        print "Executing test {}".format(self)
-        test = doubler(4)
-        self.assertEqual(test, 8)
+* So we've accounted for all of the appropriate uses of our functions, but what happens if we start to think about how it could break?  As we noted earlier, doubler('2') may or may not be very helpful. 
+* Let's try a test-driven development approach.
+* Assuming we wanted to add input validation to the doubler function and throw an exception if we don't receive an integer
+* Add a new test to `tests.py` 
 
+	```
+	import unittest
+	from doubler import doubler
+	
+	class HelperFunctionTests(unittest.TestCase):
+	    def test_001_valid_type_is_returned(self):
+	        test = doubler(2)
+	        self.assertIsInstance(test, int)
+	
+	
+	    def test_002_double_4(self):
+	        test = doubler(4)
+	        self.assertEqual(test, 8)
+	
+	    def test_003_invalid_type_raises_error(self):
+	        with self.assertRaises(TypeError):
+	            test = doubler('2')
+	
+	unittest.main()
+	
+	```
 
-unittest.main()
-```
+* Re-run the tests
 
-Which should result in the following output
+	```
+	python tests.py
+	```
+	
+* This time around executing our code we get the following:
 
-```
-..
-----------------------------------------------------------------------
-Ran 2 tests in 0.000s
-Executing test test_001_valid_type_is_returned (__main__.HelperFunctionTests)
-Executing test test_002_double_4 (__main__.HelperFunctionTests)
+	```
+	..F
+	======================================================================
+	FAIL: test_003_invalid_type_raises_error (__main__.HelperFunctionTests)
+	----------------------------------------------------------------------
+	Traceback (most recent call last):
+	  File "/Users/kecorbin/Library/Preferences/PyCharm50/scratches/scratch_1", line 41, in test_003_invalid_type_raises_error
+	    test = doubler('2')
+	AssertionError: TypeError not raised
+	
+	----------------------------------------------------------------------
+	Ran 3 tests in 0.001s
+	
+	FAILED (failures=1)
+	```
 
-OK
-```
+* So we've verified the condition we are attempting to correct though the use of a test case. 
+* Now let's modify our function, and add some input validation.  Update `doubler.py` 
+
+	```
+	def doubler(n):
+	    """
+	    A slightly more robust doubler function
+	    :param n: int
+	    :return: int
+	    """
+	    
+	    if isinstance(n, int):
+	        return 2 * n
+	    else:
+	        raise TypeError('n must be of type integer')
+	
+	```
+
+* Re-run the tests
+
+	```
+	python tests.py
+	```
+
+* And with our more robust helper function in place, our test is good.
+
+	```
+	...
+	----------------------------------------------------------------------
+	
+	Ran 3 tests in 0.000s
+	
+	OK
+	
+	```
+
+* By leveraging a test-driven development approach, we've verified that we've successfully implemented the enhancement that we intended to.
+* Best of all once the code is done, we don't have to worry about writing tests!!!
+
 [item]: # (slide)
 ### Quick Tips
 * All test methods must start with test* or they will not be executed
@@ -1802,89 +1918,6 @@ OK
 * Tests are executed in order by their name using pythons built-in ordering for strings
 
 [item]: # (/slide)
-
-[item]: # (slide)
-
-## More code
-
-[item]: # (/slide)
-
-So we've accounted for all of the appropriate uses of our functions, but what happens if we start to think about how
-it could break?  As we noted earlier, doubler('2') may or may not be very helpful, so let's try a test-driven development
-approach assuming we wanted to add input validation to the doubler function and throw an exception if we don't receive
-an integer
-
-
-```
-import unittest
-
-class HelperFunctionTests(unittest.TestCase):
-    def test_001_valid_type_is_returned(self):
-        test = doubler(2)
-        self.assertIsInstance(test, int)
-
-
-    def test_002_double_4(self):
-        test = doubler(4)
-        self.assertEqual(test, 8)
-
-    def test_003_invalid_type_raises_error(self):
-        with self.assertRaises(TypeError):
-            test = doubler('2')
-
-unittest.main()
-
-```
-
-This time around executing our code we get the following:
-
-```
-..F
-======================================================================
-FAIL: test_003_invalid_type_raises_error (__main__.HelperFunctionTests)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/Users/kecorbin/Library/Preferences/PyCharm50/scratches/scratch_1", line 41, in test_003_invalid_type_raises_error
-    test = doubler('2')
-AssertionError: TypeError not raised
-
-----------------------------------------------------------------------
-Ran 3 tests in 0.001s
-
-FAILED (failures=1)
-```
-
-So we've verified the condition we are attempting to correct though the use of a test case, now let's modify our function
-and add some input validation
-
-```
-def doubler(n):
-    """
-    A slightly more robust doubler function
-    :param n: int
-    :return: int
-    """
-    if isinstance(n, int):
-        return 2 * n
-    else:
-        raise TypeError('n must be of type integer')
-
-```
-
-And with our more robust helper function in place, we'll test the code again.
-
-```
-...
-----------------------------------------------------------------------
-
-Ran 3 tests in 0.000s
-
-OK
-
-```
-
-By leveraging a test-driven development approach, we've verified that we've successfully implemented the enhancement that
-we intended to, and best of all once the code is done, we don't have to worry about writing tests!!!
 
 [item]: # (slide)
 
@@ -1899,47 +1932,98 @@ we intended to, and best of all once the code is done, we don't have to worry ab
 Linting refers to a static code analysis for issues with the code, largely related to coding style, but also issues that may cause bugs to manifest down the road.  
 
 [item]: # (slide)
-The python community provides guidance on coding convention and style through [PEP](https://www.python.org/dev/peps/pep-0008/). Linters are a good way of verifying that the code you have written conforms to PEP.  A simple example of a linter for python is [flake8](http://flake8.pycqa.org/en/latest/) which is available via pypi
+## PEP - Python Style Guide
+
+> A style guide is about consistency. Consistency with this style guide is important. Consistency within a project is more important. Consistency within one module or function is the most important.
+
+
+[item]: # (/slide)
+
+The python community provides guidance on coding convention and style through [PEP](https://www.python.org/dev/peps/pep-0008/). 
+
+[item]: # (slide)
+
+## Reasons to Ignore Guidelines 
+
+1. When applying the guideline would make the code less readable.
+2. To be consistent with surrounding code that also breaks it. 
+3. Because the code predates the introduction of the guideline.
+4. Code compatiblity with older versions that don't support the feature.
+
+Source: [A Foolish Consistency is the Hobgoblin of Little Minds](https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+## Python Linter - Flake8
 
 ```
 pip install flake8 
+flake8 mycode.py
 ```
 
 [item]: # (/slide)
 
-[item]: # (slide)
-
-Once installed linting your code is as easy as typing 
-
-``` 
-flake8 mycode.py
-```
+Linters are a good way of verifying that the code you have written conforms to PEP.  A simple example of a linter for python is [flake8](http://flake8.pycqa.org/en/latest/) which is available via pypi
     
 Or for a larger project, you can simply run flake8 from the root of your project. 
 
+[item]: # (slide)
+# Exercises
+
 [item]: # (/slide)
 
-[item]: # (slide)
-### What are you waiting for, Give it a try on some of your code!!!!!
+## Flake the Doubler function
 
-[item]: # (/slide)
+* Enter the `imapex101_testing_example` directory and activate the virtual envionment
+* Install flake8 into the venv 
+
+	```
+	pip install flake8
+	```
+	
+* Run flake8 against the doubler function 
+
+	```
+	flake8 doubler.py
+	```
+
+* If you copied the code exactly from above, you should get this.  
+
+```
+doubler.py:7:1: W293 blank line contains whitespace
+```
+
+* Remove the blank line and rerun flake8
 
 [item]: # (slide)
-### Tips:
-* Sometimes you may choose to ignore certain errors that flake8 will throw, [here](http://flake8.pycqa.org/en/latest/user/ignoring-errors.html) is a good resource on ignoring them. Cliffs note version, end a line w/ 
+## Tips:
+
+* Sometimes you may choose to ignore certain errors that flake8 will throw, [here](http://flake8.pycqa.org/en/latest/user/ignoring-errors.html) is a good resource on ignoring them. 
+	* Cliffs note version, end a line like this 
    
-```
-# flake8: noqa
-```
+		```
+		example = lambda: 'example'  # noqa
+		```
 
 * You can also version control the configuration for flake8 by adding a .flake8 file to the root of your project, here's a sample
 
-```
-[flake8]
-ignore = D203
-exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
-max-complexity = 10
-```
+	```
+	[flake8]
+	ignore = D203
+	exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
+	max-complexity = 10
+	```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+## Go Do it Exercises
+
+* Run flake8 against the tests.py file 
+* Correct any errors that are identified
+
 
 [item]: # (/slide)
 
