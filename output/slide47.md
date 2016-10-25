@@ -1,4 +1,7 @@
-## Example script walkthrough 
+# curl
 
-Sample: [myhero_install.sh](https://github.com/hpreston/myhero_demo/blob/master/myhero-install.sh)
+```
+curl -H "Authorization: Bearer $SPARK_TOKEN" \
+		https://api.ciscospark.com/v1/teams
+```
 

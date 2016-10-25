@@ -1,11 +1,8 @@
-# Main Topics
+## Main Topics
 
-* [12 Factor Application](#12-factor-application)
-* [Basic Linux Tools](#basic-linux-tools)
-* [Markdown](#markdown)
-* [Vagrant](#vagrant)
+### Concepts
+* [Application Architecture](#application-architecture)
+* [Software Development Lifecycle](#software-development-lifecycle)
+* [Application Operations](#application-operations)
 * [OpenSource Licenses](#opensource-licenses)
-* [Python Skills](#python-skills)
-* [Writing and Using Test Cases](#writing-test-cases)
-* [Linting](#linting)
 

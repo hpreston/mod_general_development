@@ -1,12 +1,12 @@
-## Go Do It Exercises 
+### Common While loop... waiting for something to happen
 
-Look at some popular OpenSource projects and find the license that they are published under.  Here are some ideas, but feel free to look elsewhere.  
-
-* Ubuntu
-* Apache
-* HA-Proxy
-* Cisco Mantl
-* Terraform
-* Vagrant
-* Cisco Contiv
+```
+#!/bin/bash 
+COUNTER=0
+while [  $COUNTER -lt 10 ]; do
+	echo The counter is $COUNTER
+	COUNTER=COUNTER+1 
+	sleep 5
+done	
+```	
 

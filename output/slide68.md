@@ -1,9 +1,15 @@
+### String Conditionals to know
 
-### Limiations
-***Protections and other footnotes***
+* Equal
+	
+``` 
+$username == "Hank"
+```
+	
+* NOT Equal
+	
+```
+$username != "Hank"
+```
 
-* **Liability**
-	* Whether the creator can be held liable for damages
-* **Trademark Use**
-	* Usage related to trademarking. 
 

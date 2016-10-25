@@ -1,6 +1,8 @@
-# awk
+### Obvious Secrets 
 
-```
-awk '/hello/ { print $2 }' hello.txt
-```
+* Passwords 
+* Authentication Tokens
+* Usernames 
+* Credit Card
+* Account Information 
 

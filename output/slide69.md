@@ -1,8 +1,24 @@
+		
+### Numeric Comparisons to know 
 
-## Some Common Licenses 
-
-* [MIT License](http://choosealicense.com/licenses/mit/)
-* [GNU GPL License](http://choosealicense.com/licenses/gpl-3.0/)
-* [GNU LGPL License](http://choosealicense.com/licenses/lgpl-3.0/)
-* [Apache License](http://choosealicense.com/licenses/apache-2.0/)
+* Equal and NOT equal 
+	
+```
+$count -eq 42
+$count -ne 100
+```
+		
+* Greater Than and Less Than
+	
+```
+$count -gt 42
+$count -lt 100
+```
+	
+* Greater Than or Equal and Less Than or Equal
+	
+```
+$count -ge 42
+$count -le 100
+```	
 

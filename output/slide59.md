@@ -1,4 +1,6 @@
-# OpenSource 
+## sed
 
-![](images/open-source-logo.png)
+```
+sed 's/XXXXX/api.localhost.com/' template.json > install.json
+```
 

@@ -1,18 +1,9 @@
-## Tips:
 
-* Sometimes you may choose to ignore certain errors that flake8 will throw, [here](http://flake8.pycqa.org/en/latest/user/ignoring-errors.html) is a good resource on ignoring them. 
-	* Cliffs note version, end a line like this 
-   
-		```
-		example = lambda: 'example'  # noqa
-		```
+# Links
 
-* You can also version control the configuration for flake8 by adding a .flake8 file to the root of your project, here's a sample
-
-	```
-	[flake8]
-	ignore = D203
-	exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
-	max-complexity = 10
-	```
+* [https://www.fullstackpython.com/application-dependencies.html](https://www.fullstackpython.com/application-dependencies.html)
+* [https://devcenter.heroku.com/articles/python-pip](https://devcenter.heroku.com/articles/python-pip)
+* [https://tech.knewton.com/blog/2015/09/best-practices-for-python-dependency-management/](https://tech.knewton.com/blog/2015/09/best-practices-for-python-dependency-management/)
+* [http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+* [https://virtualenvwrapper.readthedocs.io/en/latest/](https://virtualenvwrapper.readthedocs.io/en/latest/)
 

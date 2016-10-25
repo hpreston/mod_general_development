@@ -1,6 +1,11 @@
-## Considerations for Choosing a License
+## Using variables 
 
-* Permissions
-* Conditions
-* Limitations
+```
+# Create a variable called myvar 
+myvar="Hello world!"
+
+# Use the variable 
+echo $myvar
+
+```
 

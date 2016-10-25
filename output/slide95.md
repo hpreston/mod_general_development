@@ -1,2 +1,5 @@
-### What are you waiting for, Give it a try on some of your code!!!!!
+# Writing Test Cases
+
+> “Testing is an infinite process of comparing the invisible to the ambiguous in order to avoid the unthinkable
+> happening to the anonymous.”— James Bach
 

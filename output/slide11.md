@@ -1,4 +1,4 @@
-## A sidebar on Secrets
+## A Stateless Aspiration
 
-![](images/secret1.png)
+![](images/no-baggage.jpg)
 
