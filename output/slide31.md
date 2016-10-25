@@ -1,5 +1,7 @@
-# Links 
+## Why do people like OpenSource? 
 
-* [http://ryanstutorials.net/linuxtutorial/cheatsheetgrep.php](http://ryanstutorials.net/linuxtutorial/cheatsheetgrep.php) 
-* [http://ryanstutorials.net/linuxtutorial/grep.php](http://ryanstutorials.net/linuxtutorial/grep.php)
+* Control
+* Training
+* Security
+* Stability 
 

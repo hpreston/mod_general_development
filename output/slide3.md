@@ -1,3 +1,5 @@
-# The 12 Factor Application
 
-![](images/12factor-image.jpg)
+## Application Architecture
+
+![](images/arch-photo.jpg)
+

@@ -1,7 +1,12 @@
-# Links 
+## Hands On Prep
 
-* [http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
-* [https://linuxconfig.org/bash-scripting-tutorial](https://linuxconfig.org/bash-scripting-tutorial)
-* [http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
-* [http://cli.learncodethehardway.org/bash_cheat_sheet.pdf](http://cli.learncodethehardway.org/bash_cheat_sheet.pdf)
+* [wunderground](https://www.wunderground.com/weather/api/)
+* [developer.ciscospark.com](https://developer.ciscospark.com)
+
+```
+export WEATHER_API_KEY=<YOUR KEY>
+export SPARK_TOKEN=<YOUR TOKEN>
+export MY_EMAIL=<YOUR EMAIL>
+export PARTNER_EMAIL=<A LAB PARTNERS EMAIL>
+```
 

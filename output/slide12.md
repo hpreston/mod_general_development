@@ -1,8 +1,3 @@
-### Obvious Secrets 
 
-* Passwords 
-* Authentication Tokens
-* Usernames 
-* Credit Card
-* Account Information 
+![](images/pickard-where-data.jpg)
 

@@ -1,6 +1,3 @@
-## sed
+## Is OpenSource inherintly better, more stable, more secure?  
 
-```
-sed 's/XXXXX/api.localhost.com/' template.json > install.json
-```
 

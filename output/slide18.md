@@ -1,3 +1,5 @@
-## Don't forget the "Ops" in DevOps...
-![](images/devops-infinity.png)
+
+## Application Operations
+
+![](images/it-ops-meme.jpg)
 

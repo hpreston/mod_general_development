@@ -1,7 +1,6 @@
-## Python Linter - Flake8
+## virtualenv
 
 ```
-pip install flake8 
-flake8 mycode.py
+virtualenv appdev 		
 ```
 

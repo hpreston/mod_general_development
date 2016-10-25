@@ -1,16 +1,12 @@
-# bash scripts
+### Conditions
+***What must you do...*** 
 
-```
-#! /bin/bash 
-
-echo "What is the best color?"
-read color
-
-while [  $color != "blue" ]; do
-	echo "Incorrect... What is the best color?"
-	read color
-done
-
-echo "Correct!"
-```
+* **OpenSource** 
+	* Actually provide the source code 
+* **License and Copyright Notificaitons** 
+	* Clearly indicate that you are using the licensed products 
+* **Copyleft**
+	* Whether other products, products must use the same license 
+* **State Changes**
+	* Explicitly state all changes  
 
