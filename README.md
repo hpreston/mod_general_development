@@ -1843,7 +1843,7 @@ A secondary benefit, but very important as well, is the ability to limit the mod
 	
 	```
 
-* Update the requirements.txt file to add a new dependency 
+* Use this echo command to update the requirements.txt file to add Flask as a new dependency 
 
 	```
 	echo "Flask==0.10.1" >> requirements.txt 
