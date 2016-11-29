@@ -7,6 +7,16 @@
 
 [item]: # (/slide)
 
+## Abstract
+
+### Part 1
+
+Developing software involves much more than simply programming languages and APIs.  Or more accurately, the process of effectively developing software requires an understanding of more than just "coding".  In this module we will explore four topics that are fundamental to any successful development project.  These topics are: Application Architecture, Software Development Lifecycle, Application Operations, and OpenSource Licenses.  
+
+### Part 2
+
+New "developers" have no shortage of resources to help begin learning languages and skills to leverage in projects.  For example, numerous "101" or "Getting Started" options are available to kickstart someone looking to pickup Python.  This hands on module is designed to provide you with some experience with some of the utility tools and technologies that are typically excluded from introduction material, but mastering them early is very imporant and time saving.  We will cover Basic Linux Tools, Markdown, and several Python topics (ie pip and Virtual Environments, Code Styling, and writing test code)
+
 [item]: # (slide)
 ## Main Topics
 
